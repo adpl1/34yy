@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الطلب - متجر مسلم</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="back-btn" onclick="history.back()">
+            <i class="fas fa-arrow-right"></i>
+        </div>
+        <h3>إتمام الطلب</h3>
+        <div></div>
+    </header>
+
+    <main class="m-10">
+        <div class="admin-card">
+            <h4>بيانات التوصيل</h4>
+            <form id="checkout-form">
+                <input type="text" id="customer-name" placeholder="الاسم الكامل" required>
+                <input type="tel" id="customer-phone" placeholder="رقم الجوال" required>
+                <input type="text" id="customer-city" placeholder="المدينة" required>
+                <textarea id="customer-address" placeholder="العنوان بالتفصيل" rows="3" required></textarea>
+                
+                <div style="margin: 15px 0;">
+                    <h4>طريقة الدفع</h4>
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                        <label style="flex: 1; border: 1px solid #ddd; padding: 10px; border-radius: 8px; text-align: center;">
+                            <input type="radio" name="payment" value="cod" checked> الدفع عند الاستلام
+                        </label>
+                    </div>
+                </div>
+
+                <div id="order-summary" style="margin: 20px 0; padding: 15px; background: #f9f9f9; border-radius: 8px;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>إجمالي الطلب:</span>
+                        <span id="checkout-total" style="font-weight: bold; color: var(--primary-color);">0 ر.س</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">تأكيد الطلب</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
